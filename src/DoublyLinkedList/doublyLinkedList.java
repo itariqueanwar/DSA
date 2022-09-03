@@ -2,6 +2,7 @@
 
 package DoublyLinkedList;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class doublyLinkedList {
@@ -94,6 +95,23 @@ public class doublyLinkedList {
         length++;
     }
 
+
+//    Function to remove the First Elemnt from the Linked List
+    public void removeFirst(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        Node temp = head;
+        if(head == tail){
+            tail = null;
+        }else{
+            head.next.prev = null;
+        }
+        head = head.next;
+        temp.next = null;
+    }
+
+
 //    Main Function Starts here
 
     public static void main(String[] args) {
@@ -108,7 +126,8 @@ public class doublyLinkedList {
                     "Press 2 To Print Linked List \n" +
                     "Press 3 to print revers of the linked list \n" +
                     "Press 4 to get the length of the Linked List \n" +
-                    "Press 5 to Insert At begin. \n");
+                    "Press 5 to Insert At begin. \n" +
+                    "Press 6 to delete First Element \n");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -132,6 +151,10 @@ public class doublyLinkedList {
                     System.out.println("Enter the Data to insert : \n");
                     int val = sc.nextInt();
                     dll.insertBegin(val);
+                }
+
+                case 6 -> {
+                    dll.removeFirst();
                 }
 
                 default -> System.out.println("Wrong Input! please select correct Option.");
