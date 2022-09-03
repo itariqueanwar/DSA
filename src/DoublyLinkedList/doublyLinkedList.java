@@ -44,6 +44,7 @@ public class doublyLinkedList {
 //    Method to Print the Linked List
     public void print(){
         if(head == null){
+            System.out.println("Empty");
             return;
         }
         Node current = head;
@@ -57,6 +58,9 @@ public class doublyLinkedList {
 
 //    Method to print the Linked List in reverse
     public void reversPrint(){
+        if(isEmpty()){
+            System.out.println("Empty");
+        }
         if(tail == null);
         Node current = tail;
         System.out.print("Null -> ");
@@ -111,6 +115,21 @@ public class doublyLinkedList {
         temp.next = null;
     }
 
+//    Funtion to delete last element of the given linked list
+
+    public void removeLast(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        Node temp = tail;
+        if(head == tail){
+            head = null;
+        }else{
+            tail.prev.next = null;
+        }
+        tail = tail.prev;
+        temp.prev = null;
+    }
 
 //    Main Function Starts here
 
@@ -127,7 +146,8 @@ public class doublyLinkedList {
                     "Press 3 to print revers of the linked list \n" +
                     "Press 4 to get the length of the Linked List \n" +
                     "Press 5 to Insert At begin. \n" +
-                    "Press 6 to delete First Element \n");
+                    "Press 6 to delete First Element \n" +
+                    "Press 7 to delete Last Element \n");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -155,6 +175,10 @@ public class doublyLinkedList {
 
                 case 6 -> {
                     dll.removeFirst();
+                }
+
+                case 7 -> {
+                    dll.removeLast();
                 }
 
                 default -> System.out.println("Wrong Input! please select correct Option.");
