@@ -38,6 +38,7 @@ public class sort0_1_And_2 {
         int current = 0;
         while(current <= e){
             if(arr[current] == 0){
+
                 int temp = arr[s];
                 arr[s] = arr[current];
                 arr[current] = temp;
