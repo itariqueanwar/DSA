@@ -15,7 +15,9 @@ Output: 3.
 
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class findDuplicate {
@@ -34,6 +36,38 @@ public class findDuplicate {
         return -1;
     }
 
+//  Optimised Solution for the same problem:
+
+    public static int duplicateOptimised(int[] nums){
+        int slow = nums[0];
+        int fast = nums[0];
+
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }while(fast != slow);
+
+        fast = nums[0];
+        while(slow != fast){
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+
+        return slow;
+    }
+
+//    Approach 3 if their eis duplicates more than 1
+    public static List<Integer> approach3(int[] nums){
+        List<Integer> list = new ArrayList<>();
+
+        for(int i = 0; i < nums.length; i++){
+            int index = Math.abs(nums[i]) - 1;
+            if(nums[index] < 0) list.add(index + 1);
+            nums[index] *= -1;
+        }
+
+        return list;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -45,7 +79,8 @@ public class findDuplicate {
         }
 
         System.out.println("Given Array is : " + Arrays.toString(nums));
-        System.out.println("Ans is : " + duplicate(nums));
-
+//        System.out.println("Ans is : " + duplicate(nums));
+//        System.out.println(duplicateOptimised(nums));
+        System.out.println(approach3(nums));
     }
 }
