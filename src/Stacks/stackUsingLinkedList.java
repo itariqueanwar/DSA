@@ -1,5 +1,13 @@
 /*
 Implementing Stack using Linked List in java.
+
+
+Stack is A data structure Which uses the principal of FILO(First In Last Out).
+Means the element inserted in the last will be removed first.
+
+Insertion -> Push;
+Removing Element from Stack -> Pop;
+See last Element -> peek;
  */
 
 package Stacks;
