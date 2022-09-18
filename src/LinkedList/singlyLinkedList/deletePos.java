@@ -1,9 +1,8 @@
-package singlyLinkedList;
+package LinkedList.singlyLinkedList;
 
-public class InsertionAtposition {
+public class deletePos {
 
-    private static Node head;
-
+    private Node head;
     private static class Node{
         private int data;
         private Node next;
@@ -12,55 +11,47 @@ public class InsertionAtposition {
             this.data = data;
             this.next = null;
         }
-
     }
 
     void print(){
         Node current = head;
-        while(current != null){
+
+        while (current != null){
             System.out.print(current.data + " -> ");
             current = current.next;
         }
-        System.out.print("Null \n");
+        System.out.println("Null");
     }
 
-    void insertAtPos(int data, int pos){
-        Node newNode = new Node(data);
-        if(pos == 1){
-            newNode.next = head;
-            head = newNode;
-        }
+    Node deleteAtPos(int pos){
         int count = 1;
+        Node prev = null;
         Node current = head;
-        Node temp = head.next;
-        while(count < pos - 1){
+
+        while(count < pos){
+            prev = current;
             current = current.next;
-            temp = temp.next;
             count++;
         }
-        current.next = newNode;
-        newNode.next = temp;
-
+        prev.next = current.next;
+        return prev;
     }
 
-
     public static void main(String[] args) {
-        InsertionAtposition iop = new InsertionAtposition();
-        head = new Node(10);
+        deletePos dp = new deletePos();
+        dp.head = new Node(10);
         Node n1 = new Node(20);
         Node n2 = new Node(30);
         Node n3 = new Node(40);
         Node n4 = new Node(50);
 
-        head.next = n1;
+        dp.head.next = n1;
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
-        iop.print();
-        iop.insertAtPos(60, 1);
-        iop.print();
 
-
-
+        dp.print();
+        dp.deleteAtPos(3);
+        dp.print();
     }
 }

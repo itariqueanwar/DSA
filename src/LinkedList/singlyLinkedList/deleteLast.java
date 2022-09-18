@@ -1,4 +1,4 @@
-package singlyLinkedList;
+package LinkedList.singlyLinkedList;
 
 public class deleteLast {
 

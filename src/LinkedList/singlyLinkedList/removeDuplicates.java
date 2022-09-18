@@ -1,12 +1,12 @@
 /*
 Removing the duplicates from the
  */
-package singlyLinkedList;
+package LinkedList.singlyLinkedList;
 
 public class removeDuplicates {
 
-    static Node head;
-    static class Node{
+    private Node head;
+    public static class Node{
         int data;
         Node next;
 
@@ -24,7 +24,7 @@ public class removeDuplicates {
         System.out.println("Null");
     }
 
-    public Node removeDuplicates(Node head){
+    public Node RemoveDuplicates(Node head){
         Node temp = head;
 
         while(temp != null && temp.next != null){
@@ -48,6 +48,6 @@ public class removeDuplicates {
         list.head.next.next.next.next = new Node(3);
 
         list.print(list.head);
-        list.print(list.removeDuplicates(list.head));
+        list.print(list.RemoveDuplicates(list.head));
     }
 }

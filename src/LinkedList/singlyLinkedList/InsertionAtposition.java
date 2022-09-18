@@ -1,7 +1,8 @@
-package singlyLinkedList;
+package LinkedList.singlyLinkedList;
 
-public class InsertAtBegin {
-    private Node head;
+public class InsertionAtposition {
+
+    private static Node head;
 
     private static class Node{
         private int data;
@@ -11,6 +12,7 @@ public class InsertAtBegin {
             this.data = data;
             this.next = null;
         }
+
     }
 
     void print(){
@@ -19,40 +21,44 @@ public class InsertAtBegin {
             System.out.print(current.data + " -> ");
             current = current.next;
         }
-        System.out.println("NULL");
+        System.out.print("Null \n");
     }
 
-    private void InsertBegin(int data){
+    void insertAtPos(int data, int pos){
         Node newNode = new Node(data);
-        Node temp = head;
-
-        if(head == null){
-            head.next = newNode;
+        if(pos == 1){
+            newNode.next = head;
+            head = newNode;
         }
-
-        head = newNode;
+        int count = 1;
+        Node current = head;
+        Node temp = head.next;
+        while(count < pos - 1){
+            current = current.next;
+            temp = temp.next;
+            count++;
+        }
+        current.next = newNode;
         newNode.next = temp;
 
     }
 
+
     public static void main(String[] args) {
-        InsertAtBegin iab = new InsertAtBegin();
-        iab.head = new Node(10);
+        InsertionAtposition iop = new InsertionAtposition();
+        head = new Node(10);
         Node n1 = new Node(20);
         Node n2 = new Node(30);
         Node n3 = new Node(40);
         Node n4 = new Node(50);
 
-        iab.head.next = n1;
+        head.next = n1;
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
-        iab.print();
-
-        System.out.println();
-        System.out.println("Inserting the Node At the Begin of the Above Singly Linked List");
-        iab.InsertBegin(60);
-        iab.print();
+        iop.print();
+        iop.insertAtPos(60, 1);
+        iop.print();
 
 
 

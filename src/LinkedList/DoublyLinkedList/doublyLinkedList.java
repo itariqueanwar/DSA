@@ -1,6 +1,6 @@
 //Implementing Doubly Linked List
 
-package DoublyLinkedList;
+package LinkedList.DoublyLinkedList;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

@@ -1,8 +1,8 @@
-package singlyLinkedList;
+package LinkedList.singlyLinkedList;
 
-public class deletePos {
+public class deleteFirst {
 
-    private Node head;
+    private  static  Node head;
     private static class Node{
         private int data;
         private Node next;
@@ -16,42 +16,41 @@ public class deletePos {
     void print(){
         Node current = head;
 
-        while (current != null){
+        while(current != null){
             System.out.print(current.data + " -> ");
             current = current.next;
         }
         System.out.println("Null");
     }
 
-    Node deleteAtPos(int pos){
-        int count = 1;
-        Node prev = null;
+    Node deleteFirst(){
         Node current = head;
-
-        while(count < pos){
-            prev = current;
-            current = current.next;
-            count++;
+        if(head == null){
+            return null;
         }
-        prev.next = current.next;
-        return prev;
+        head = head.next;
+        current.next = null;
+        return current;
+
     }
 
     public static void main(String[] args) {
-        deletePos dp = new deletePos();
-        dp.head = new Node(10);
+        deleteFirst df = new deleteFirst();
+        head = new Node(10);
         Node n1 = new Node(20);
         Node n2 = new Node(30);
         Node n3 = new Node(40);
         Node n4 = new Node(50);
 
-        dp.head.next = n1;
+        head.next = n1;
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
 
-        dp.print();
-        dp.deleteAtPos(3);
-        dp.print();
+        df.print();
+        df.deleteFirst();
+        df.print();
+        df.deleteFirst();
+        df.print();
     }
 }
