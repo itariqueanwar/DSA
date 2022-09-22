@@ -76,7 +76,6 @@ public class stackUsingLinkedList {
 
         while(true){
             System.out.println("Please select One Option : \n" +
-                    "" +
                     "To push data Press 1 \n" +
                     "To pop data Press 2 \n" +
                     "To peek top data Press 3 \n" +

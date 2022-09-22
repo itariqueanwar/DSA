@@ -1,7 +1,7 @@
 package LinkedList.singlyLinkedList;
 
 public class reverseSLL {
-    static Node head;
+    private Node head;
 
     static class Node{
         int data;
@@ -43,8 +43,8 @@ public class reverseSLL {
         list.head.next.next = new Node(30);
         list.head.next.next.next = new Node(40);
 
-        list.print(head);
+        list.print(list.head);
 //        list.reversLinkedList(head);
-        list.print(list.reversLinkedList(head));
+        list.print(list.reversLinkedList(list.head));
     }
 }

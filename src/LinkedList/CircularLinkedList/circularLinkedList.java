@@ -10,7 +10,7 @@ public class circularLinkedList {
     private int length;
 
 //    creating the Node Class
-    private class Node{
+    private static class Node{
         private int data;
         private Node next;
 

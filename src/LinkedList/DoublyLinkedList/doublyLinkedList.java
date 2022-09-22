@@ -12,7 +12,7 @@ public class doublyLinkedList {
     private int length;
 
 //    Creating an inner class to create Doubly Linked List.
-    private class Node{
+    private static class Node{
         private int val;
         private Node next;
         private Node prev;
