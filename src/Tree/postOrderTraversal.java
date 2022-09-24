@@ -5,7 +5,7 @@ import java.util.Stack;
 public class postOrderTraversal {
     private Node root;
 
-    private static class Node{
+    private class Node{
         private int data;
         private Node left;
         private Node right;
