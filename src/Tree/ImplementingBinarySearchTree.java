@@ -48,7 +48,23 @@ public class ImplementingBinarySearchTree {
 
 //    Method to search element in a Given Binary search Tree.
     public boolean searchElement(int target){
+        Node temp = searchElement(root, target);
+        if(temp == null || temp.data != target){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
+    public Node searchElement(Node root, int target){
+        if(root == null || root.data == target){
+            return root;
+        }
+        if(target < root.data){
+            return searchElement(root.left, target);
+        }else{
+            return searchElement(root.right, target);
+        }
     }
 //    Diver Code
     public static void main(String[] args) {
@@ -76,7 +92,7 @@ public class ImplementingBinarySearchTree {
                 }
                 case 3 ->{
                     int target = bst.sc.nextInt();
-                    bst.searchElement(target);
+                    System.out.println(bst.searchElement(target));
                 }
             }
         }
