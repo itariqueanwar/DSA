@@ -24,7 +24,7 @@ public class maxValueInBinaryTree {
     public void createBinaryTree(){
         Node first = new Node(4);
         Node second = new Node(3);
-        Node third = new Node(7);
+        Node third = new Node(21);
         Node fourth = new Node(5);
         Node fifth = new Node(8);
 
