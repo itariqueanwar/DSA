@@ -66,6 +66,23 @@ public class ImplementingBinarySearchTree {
             return searchElement(root.right, target);
         }
     }
+
+//    Method to validate if the given tree is BST or not.
+    public boolean isValidBST(Node root, long min, long max){
+        if(root == null){
+            return true;
+        }
+//        Remember ->  min < root.data < max.
+        if(root.data <= min || root.data >= max){
+            return false;
+        }
+        boolean left = isValidBST(root.left, min, root.data);
+        if(left){
+            boolean right = isValidBST(root.right, root.data, max);
+            return right;
+        }
+        return false;
+    }
 //    Diver Code
     public static void main(String[] args) {
         ImplementingBinarySearchTree bst = new ImplementingBinarySearchTree();
@@ -77,6 +94,7 @@ public class ImplementingBinarySearchTree {
                     Press 1 To insert into Binary Search Tree.\s
                     Press 2 To Print the Binary Search Tree\s
                     Press 3 To Search Element\s
+                    Press 4 To Check BST is valid or not\s
                     Press 0 To Exit""");
             int choice = bst.sc.nextInt();
             switch (choice){
@@ -93,6 +111,9 @@ public class ImplementingBinarySearchTree {
                 case 3 ->{
                     int target = bst.sc.nextInt();
                     System.out.println(bst.searchElement(target));
+                }
+                case 4 -> {
+                    System.out.println(bst.isValidBST(bst.root, Long.MIN_VALUE, Long.MAX_VALUE));
                 }
             }
         }
