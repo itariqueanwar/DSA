@@ -13,7 +13,7 @@ Input: 0,3,1,5,4,3,2
 Output: 3.
  */
 
-package arrays;
+package arrays.OneDimension;
 
 import java.util.ArrayList;
 import java.util.Arrays;

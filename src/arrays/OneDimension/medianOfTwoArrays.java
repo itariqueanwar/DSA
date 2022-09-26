@@ -30,7 +30,7 @@ nums2.length == n
 
 
 //Need To Optimise more.
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Arrays;
 

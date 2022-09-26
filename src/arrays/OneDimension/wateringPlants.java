@@ -49,7 +49,7 @@ n == plants.length
 1 <= plants[i] <= 106
 max(plants[i]) <= capacity <= 109
  */
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -8,7 +8,7 @@ EXAMPLE:
 Output:
     5.
  */
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Scanner;
 

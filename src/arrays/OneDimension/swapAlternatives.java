@@ -12,7 +12,7 @@ Input : 8,3,4,9,2,5,6,7,9
 Output: 3,8,9,4,5,2,7,6,9
  */
 
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Scanner;
 

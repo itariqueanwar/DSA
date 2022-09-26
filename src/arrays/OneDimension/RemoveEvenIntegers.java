@@ -2,7 +2,7 @@
 Java Program to remove all the Even Numbers from the given Array of size n.
  */
 
-package arrays;
+package arrays.OneDimension;
 
 
 import java.util.Scanner;

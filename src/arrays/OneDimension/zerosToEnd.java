@@ -1,7 +1,7 @@
 /*
 Java Program to Move all the zeroes in array to end of the Array.
  */
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Scanner;
 

@@ -11,7 +11,7 @@ can be contained.
 
 Note : You may not slant the container.
  */
-package arrays;
+package arrays.OneDimension;
 
 import java.util.Arrays;
 import java.util.Scanner;

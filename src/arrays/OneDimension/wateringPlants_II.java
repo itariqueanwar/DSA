@@ -48,7 +48,7 @@ n == plants.length
 1 <= plants[i] <= 106
 max(plants[i]) <= capacityA, capacityB <= 109
  */
-package arrays;
+package arrays.OneDimension;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

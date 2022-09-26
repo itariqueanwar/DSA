@@ -2,9 +2,8 @@
 Java Program to revers the Given array of size n.
  */
 
-package arrays;
+package arrays.OneDimension;
 
-import java.util.Collections;
 import java.util.Scanner;
 
 public class ReversArray {
