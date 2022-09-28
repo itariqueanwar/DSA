@@ -1,8 +1,6 @@
 public class test {
     public static void main(String[] args) {
-        boolean bool = false;
-
-        System.out.println(!bool);
+        System.out.println("Testing the Git Push");
     }
 }
 
