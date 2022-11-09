@@ -13,5 +13,6 @@ public class While {
         int big = ((num1 > num2) ? num2 : ((num2 > num3) ? num2 : num3));
         System.out.println(big);
 
+
     }
 }
